@@ -1,0 +1,21 @@
+<body>
+     
+     <h1>Welcome to {{appName}}</h1>
+     
+       <!-- <div [hidden]="toggle">
+          <p>Total number of rooms avaliable are : </p>
+          <p [innerText]="rooms.availableRooms" ></p>
+       </div> -->
+
+       <!-- '??' null collision operator -->
+       {{rooms?.totalRooms ?? 'No rooms'}}
+
+       <!-- rooms?.totalRooms optional chaining -->
+
+       <div *ngIf="rooms?.totalRooms">
+          <p>Total number of rooms avaliable are : </p>
+          <p >{{rooms.availableRooms}}</p>
+       </div>
+
+     <button (click)="getRooms()">Get rooms</button>
+</body>
